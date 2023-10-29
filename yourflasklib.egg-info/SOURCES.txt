@@ -1,0 +1,7 @@
+setup.py
+yourflasklib/__init__.py
+yourflasklib.egg-info/PKG-INFO
+yourflasklib.egg-info/SOURCES.txt
+yourflasklib.egg-info/dependency_links.txt
+yourflasklib.egg-info/requires.txt
+yourflasklib.egg-info/top_level.txt
