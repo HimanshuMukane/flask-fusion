@@ -1,4 +1,8 @@
-from flask import render_template
+def generate_button(label, button_id, button_class, onclick):
+    button_code = f"""
+        <button id="{button_id}" class="{button_class}" onclick="{onclick}">
+            {label}
+        </button>
+    """
 
-def create_button(text, button_type):
-    return render_template('yourflasklib/button.html', text=text, button_type=button_type)
+    return button_code
