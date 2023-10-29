@@ -13,23 +13,23 @@ app.static_folder = os.path.join(os.path.dirname(__file__), 'static')
 
 # Import your components and register them as context processors
 from .carousel import generate_carousel
-from .navbar import create_responsive_navbar
-from .alert import create_alert
-from .modal import create_modal
-from .form import create_form
-from .button import create_button
-from .card import create_card
-from .pagination import create_pagination
+from .navbar import generate_navbar
+from .alert import generate_alert
+from .modal import generate_modal
+from .form import generate_form
+from .button import generate_button
+from .card import generate_cards
+from .pagination import generate_pagination
 
 # Register your components as Flask context processors
 app.jinja_env.globals.update(create_carousel=generate_carousel)
-app.jinja_env.globals.update(create_responsive_navbar=create_responsive_navbar)
-app.jinja_env.globals.update(create_alert=create_alert)
-app.jinja_env.globals.update(create_modal=create_modal)
-app.jinja_env.globals.update(create_form=create_form)
-app.jinja_env.globals.update(create_button=create_button)
-app.jinja_env.globals.update(create_card=create_card)
-app.jinja_env.globals.update(create_pagination=create_pagination)
+app.jinja_env.globals.update(generate_navbar=generate_navbar)
+app.jinja_env.globals.update(generate_alert=generate_alert)
+app.jinja_env.globals.update(generate_modal=generate_modal)
+app.jinja_env.globals.update(generate_form=generate_form)
+app.jinja_env.globals.update(generate_button=generate_button)
+app.jinja_env.globals.update(generate_cards=generate_cards)
+app.jinja_env.globals.update(generate_pagination=generate_pagination)
 
 # Print the template and static folder paths for debugging
 print("Template Folder Path:", app.template_folder)

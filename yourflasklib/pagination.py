@@ -1,4 +1,16 @@
-from flask import render_template
+def generate_pagination(current_page, total_pages, base_url):
+    pagination_items = []
 
-def create_pagination(total_pages, current_page):
-    return render_template('yourflasklib/pagination.html', total_pages=total_pages, current_page=current_page)
+    for page in range(1, total_pages + 1):
+        if page == current_page:
+            pagination_items.append(f'<span class="current-page">{page}</span>')
+        else:
+            pagination_items.append(f'<a href="{base_url}?page={page}">{page}</a>')
+
+    pagination_code = f"""
+        <div class="pagination">
+            {"".join(pagination_items)}
+        </div>
+    """
+
+    return pagination_code

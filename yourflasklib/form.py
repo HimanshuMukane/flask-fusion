@@ -1,4 +1,9 @@
-from flask import render_template
+def generate_form(form_id, action, method, fields):
+    form_code = f"""
+        <form id="{form_id}" action="{action}" method="{method}">
+            {"".join(fields)}
+            <input type="submit" value="Submit">
+        </form>
+    """
 
-def create_form(fields):
-    return render_template('yourflasklib/form.html', fields=fields)
+    return form_code

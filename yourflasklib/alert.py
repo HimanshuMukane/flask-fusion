@@ -1,4 +1,8 @@
-from flask import render_template
+def generate_alert(alert_type, message):
+    alert_code = f"""
+        <div class="alert {alert_type}">
+            {message}
+        </div>
+    """
 
-def create_alert(message, alert_type):
-    return render_template('yourflasklib/alert.html', message=message, alert_type=alert_type)
+    return alert_code
