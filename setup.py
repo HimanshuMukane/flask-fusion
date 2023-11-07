@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='yourflasklib',
+    name='library',
     version='0.1',
     description='A simple Flask library for UI components',
     author='Your Name',

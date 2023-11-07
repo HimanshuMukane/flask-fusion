@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="your_custom.css"> <!-- Add the path to your custom CSS file -->
+
+    <!-- Optional: Include additional Bootstrap themes or customize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap-theme.min.css">
+    <style>
+body {
+    background: url('https://c4.wallpaperflare.com/wallpaper/752/194/470/circles-highlights-background-form-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+        /* Style the container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba( 255, 255, 255, 0.55 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 18.5px );
+-webkit-backdrop-filter: blur( 18.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 5px;
+}
+
+/* Style the headings */
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Style the radio buttons and labels */
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-weight: normal;
+    color: #333;
+}
+
+/* Style the text input and textarea */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style the buttons */
+.btn {
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Style the radio button labels when checked */
+.form-check-input:checked + .form-check-label {
+    font-weight: bold;
+}
+
+/* Style the add image container */
+#add_img_container {
+    margin-top: 20px;
+}
+
+/* Style the add image button */
+#add_new_img {
+    background-color: #007bff;
+    color: #fff;
+}
+/* Style the custom radio button container */
+.custom-radio-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Style the select button */
+.custom-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Style the radio button label */
+.custom-radio-label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style the dropdown icon */
+.custom-select::after {
+    content: "▼"; /* Unicode character for a down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Style the dropdown options container */
+.custom-select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+/* Style the dropdown option items */
+.custom-select-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Style the dropdown option items on hover */
+.custom-select-option:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Show the dropdown options on select button hover or click */
+.custom-select:hover .custom-select-options,
+.custom-select:focus .custom-select-options {
+    display: block;
+}
+
+/* Style the optional Bootstrap theme */
+/* You can include additional Bootstrap themes or customize this section */
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Select Carousel Template</h2>
+    <form action="/createCarousel" method="post" enctype="multipart/form-data">
+        <div class="custom-radio-container">
+            <label class="custom-radio-label" for="template_select">Select Template:</label>
+            <select class="custom-select" id="template_select" name="template_type" required>
+                <option value="3dwheelcarousel">3dwheelcarousel</option>
+                <option value="basic_slide_carousel">Basic Slideshow Carousel</option>
+            </select>
+        </div>
+        <div id="add_img_container">
+
+        </div>
+        <button id="add_new_img" type="button" class="btn btn-primary">Add Image</button>
+        <button class="btn btn-success" type="submit">Generate</button>
+    </form>
+    <h2>Select Modal Template</h2>
+    <form action="/createModal" method="POST">
+        <div class="custom-radio-container">
+            <label class="custom-radio-label" for="template_select">Select Template:</label>
+            <select class="custom-select" id="template_select" name="template_type" required>
+                <option value="basic_modal">basic_modal</option>
+                <option value="small_modal">small_modal</option>
+                <option value="large_modal">large_modal</option>
+            </select>
+        </div>
+        <div class="container">
+            <input  type="text" name="modal_button" id="modal_button" placeholder="Modal Button Text" required><br>
+            <input  type="text" name="modal_title" id="modal_title" placeholder="Modal Title" required><br>
+            <textarea name="modal_body" id="modal_body" placeholder="Modal Content" cols="30" rows="3"></textarea>
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>
+</body>
+<script>
+    const addNewImg = document.getElementById('add_new_img');
+    const addImgContainer = document.getElementById('add_img_container');
+    addNewImg.addEventListener('click', () => {
+        const newImg = document.createElement('input');
+        const imgTitle = document.createElement('input');
+
+        newImg.setAttribute('type', 'file');
+        newImg.setAttribute('name', 'template_img');
+        newImg.setAttribute('class', 'form-control mt-2');
+
+        imgTitle.setAttribute('type', 'text');
+        imgTitle.setAttribute('name', 'template_img_title');
+        imgTitle.setAttribute('placeholder', 'Insert Image Title');
+        addImgContainer.appendChild(newImg);
+        addImgContainer.appendChild(imgTitle);
+
+        const delbtn = document.createElement('button');
+        delbtn.setAttribute('class', 'btn btn-danger mt-2');
+        delbtn.innerHTML = 'Delete img';
+        delbtn.addEventListener('click', () => {
+            addImgContainer.removeChild(newImg);
+            addImgContainer.removeChild(imgTitle);
+            addImgContainer.removeChild(delbtn);
+        })
+        addImgContainer.appendChild(delbtn);
+    })
+
+</script>
+</html>
