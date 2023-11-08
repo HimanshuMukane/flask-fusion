@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
-from library.html_templates import generate_carousel,generate_modal
+from flask_fusion.html_templates import generate_carousel,generate_modal
 import os
-from library.config import ALLOWED_EXTENSIONS  
+from flask_fusion.config import ALLOWED_EXTENSIONS  
 import uuid
 
 carousel_blueprint = Blueprint('carousel', __name__)

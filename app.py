@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request
-from library.carousel_routes import carousel_routes
-from library.modal_routes import modal_routes
-from library.config import loader
+from flask_fusion.carousel_routes import carousel_routes
+from flask_fusion.modal_routes import modal_routes
+from flask_fusion.config import loader
 app = Flask(__name__)
 app.jinja_loader = loader 
 

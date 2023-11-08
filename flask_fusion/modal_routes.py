@@ -1,4 +1,4 @@
-from library.html_templates import generate_carousel,generate_modal
+from flask_fusion.html_templates import generate_carousel,generate_modal
 from flask import Blueprint, render_template, request
 
 modal_blueprint = Blueprint('modal', __name__)
