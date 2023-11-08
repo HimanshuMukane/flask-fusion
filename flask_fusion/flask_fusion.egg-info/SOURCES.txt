@@ -1,3 +1,5 @@
+README.md
+pyproject.toml
 setup.py
 flask_fusion.egg-info/PKG-INFO
 flask_fusion.egg-info/SOURCES.txt
